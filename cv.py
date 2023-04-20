@@ -17,7 +17,7 @@ import pytesseract
 class Sender(webdriver.Chrome):
     def __init__(self) -> None:
         super().__init__(service=ChromeService(ChromeDriverManager().install()))
-        self.implicitly_wait(15)
+        self.implicitly_wait(5)
         self.maximize_window()
         self.current_window=self.current_window_handle
         self.ads=[]
@@ -78,7 +78,7 @@ class Sender(webdriver.Chrome):
            if(w!=self.current_window):
             self.switch_to.window(w)
             self.maximize_window()
-            self.implicitly_wait(15)
+            self.implicitly_wait(5)
 
     
     def get_image_name(self):
